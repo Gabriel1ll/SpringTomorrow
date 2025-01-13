@@ -1,5 +1,6 @@
 package br.ufba.tomorrow.todoProject.domain.entities;
 
+import br.ufba.tomorrow.todoProject.api.dto.UsuarioCreateDTO;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -19,6 +20,10 @@ public class Usuario {
     private List<Todo> todoList;
     public Usuario() {}
     public Usuario(long id) {this.id = id;}
+    public Usuario(UsuarioCreateDTO dto) {
+        this.email = dto.getEmail();
+        this.senha = dto.getSenha();
+    }
 
     public Long getId() {
         return id;

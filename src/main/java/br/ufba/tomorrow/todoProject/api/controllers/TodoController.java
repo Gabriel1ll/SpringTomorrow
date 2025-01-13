@@ -7,6 +7,7 @@ import br.ufba.tomorrow.todoProject.domain.entities.Estado;
 import br.ufba.tomorrow.todoProject.domain.entities.Todo;
 import br.ufba.tomorrow.todoProject.domain.services.TodoService;
 import br.ufba.tomorrow.todoProject.repository.TodoRepository;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
