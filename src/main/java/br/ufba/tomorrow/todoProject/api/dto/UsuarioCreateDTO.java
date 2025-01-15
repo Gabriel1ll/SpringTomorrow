@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 public class UsuarioCreateDTO {
-    @NotEmpty
+    @NotEmpty(message = "O email não pode ser em branco!")
     @Email(message = "Email Inválido")
     String email;
 

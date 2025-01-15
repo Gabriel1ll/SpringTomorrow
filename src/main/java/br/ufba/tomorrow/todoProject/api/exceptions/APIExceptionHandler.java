@@ -17,17 +17,12 @@ public class APIExceptionHandler {
     public ResponseEntity<Object> handleValidationException(MethodArgumentNotValidException ex) {
         // Constrói a mensagem de erro
         StringBuilder mensagem = new StringBuilder("Erro(s) de validação: ");
-        ex.getBindingResult().getAllErrors().forEach(error -> {
-            mensagem.append(error.getDefaultMessage()).append("; ");
-        });
-
-        // Estrutura a resposta
+        mensagem.append(ex.getMessage());
         Map<String, Object> body = new HashMap<>();
         body.put("status", HttpStatus.BAD_REQUEST.value());
         body.put("error", "Problema nos parâmetros enviados!");
         body.put("message", mensagem.toString().trim());
         body.put("timestamp", LocalDateTime.now());
-
         return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
 }
