@@ -13,9 +13,4 @@ public class TodoProjectApplication {
 		SpringApplication.run(TodoProjectApplication.class, args);
 	}
 
-
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
 }
