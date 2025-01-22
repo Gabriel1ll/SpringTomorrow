@@ -14,13 +14,6 @@ import org.springframework.web.filter.GenericFilterBean;
 import java.io.IOException;
 
 public class AuthorizationFilter extends GenericFilterBean {
-    private final AuthenticationManager authenticationManager;
-
-    // Construtor que recebe AuthenticationManager
-    public AuthorizationFilter(AuthenticationManager authenticationManager) {
-        this.authenticationManager = authenticationManager;
-    }
-
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
