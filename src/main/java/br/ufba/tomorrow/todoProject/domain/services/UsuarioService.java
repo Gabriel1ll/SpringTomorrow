@@ -25,8 +25,8 @@ public class UsuarioService {
             throw new DataIntegrityViolationException(
                     "Já existe um usuário cadastrado com esse email");
         }
-        Usuario novo = new Usuario();
+        Usuario novo = new Usuario(dto);
         novo.setSenha(passwordEncoder.encode(dto.getSenha()));
-        return new UsuarioDTO(repository.save(new Usuario(dto)));
+        return new UsuarioDTO(repository.save(novo));
     }
 }
